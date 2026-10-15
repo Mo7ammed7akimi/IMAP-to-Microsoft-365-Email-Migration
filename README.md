@@ -11,7 +11,6 @@ Documentation and supporting files for migrating mailboxes from a generic IMAP s
 - [Migration plan](#migration-plan)
 - [Method 1: Exchange admin centre](#method-1-exchange-admin-centre)
 - [Method 2: PowerShell](#method-2-powershell)
-- [Method 3: imapsync](#method-3-imapsync)
 - [DNS cutover](#dns-cutover)
 - [Post-migration tasks](#post-migration-tasks)
 - [Troubleshooting](#troubleshooting)
@@ -67,22 +66,6 @@ Before starting, confirm that:
 - [ ] A mailbox inventory (addresses and sizes) has been recorded.
 - [ ] The DNS TTL for MX records has been lowered (for example to 300 seconds) at least 48 hours before cutover.
 - [ ] Users have been informed of the migration window.
-
-## Repository structure
-
-```
-.
-├── README.md
-├── migration-users.csv.example   # Template for the migration batch CSV
-├── scripts/
-│   ├── create-endpoint.ps1       # Creates the IMAP migration endpoint
-│   ├── create-batch.ps1          # Creates and starts the migration batch
-│   └── check-status.ps1          # Reports migration progress
-└── docs/
-    └── cutover-checklist.md      # Cutover day checklist
-```
-
-Adjust this section to match the files actually included in the repository.
 
 ## Migration plan
 
@@ -188,23 +171,6 @@ Complete-MigrationBatch -Identity "IMAP-Batch-01"
 Remove-MigrationBatch -Identity "IMAP-Batch-01"
 ```
 
-## Method 3: imapsync
-
-[imapsync](https://imapsync.lamiral.info/) is an alternative when the built-in migration is not suitable, for example when more control over folders or filtering is required.
-
-```bash
-imapsync \
-  --host1 imap.example.com --user1 user@example.com --password1 'SourcePassword' --ssl1 \
-  --host2 outlook.office365.com --user2 user@example.com --password2 'TargetPassword' --ssl2 \
-  --automap
-```
-
-Notes:
-
-- Run with `--dry` first to preview the actions.
-- Microsoft 365 may require an app password or modern authentication, depending on the tenant's security settings. Check the tenant's IMAP and authentication configuration.
-- imapsync can be re-run safely to copy only new messages.
-
 ## DNS cutover
 
 Perform these changes once the initial sync is complete and verified.
@@ -260,7 +226,3 @@ Rollback is only practical while the source server is still active, so avoid dec
 - [Migrate email from an IMAP server to Microsoft 365](https://learn.microsoft.com/en-us/exchange/mailbox-migration/migrating-imap-mailboxes/migrating-imap-mailboxes)
 - [Add a domain to Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/admin/setup/add-domain)
 - [Set up SPF, DKIM and DMARC](https://learn.microsoft.com/en-us/defender-office-365/email-authentication-about)
-
-## Licence
-
-Add a licence for this repository (for example MIT) or remove this section.
