@@ -223,4 +223,3 @@ Rollback is only practical while the source server is still active, so avoid dec
 
 - [Migrate email from an IMAP server to Microsoft 365](https://learn.microsoft.com/en-us/exchange/mailbox-migration/migrating-imap-mailboxes/migrating-imap-mailboxes)
 - [Add a domain to Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/admin/setup/add-domain)
-- [Set up SPF, DKIM and DMARC](https://learn.microsoft.com/en-us/defender-office-365/email-authentication-about)
