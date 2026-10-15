@@ -178,10 +178,8 @@ Perform these changes once the initial sync is complete and verified.
 | Record | Type | Value (example) | Purpose |
 |---|---|---|---|
 | MX | MX | `example-com.mail.protection.outlook.com` (priority 0) | Routes incoming mail to Microsoft 365 |
-| Autodiscover | CNAME | `autodiscover.outlook.com` | Client auto-configuration |
 | SPF | TXT | `v=spf1 include:spf.protection.outlook.com -all` | Authorises Microsoft 365 to send mail |
-| DKIM | CNAME | Values provided in the Microsoft Defender portal | Message signing |
-| DMARC | TXT | `v=DMARC1; p=none; rua=mailto:dmarc@example.com` | Reporting and policy |
+| Autodiscover | CNAME | `autodiscover.outlook.com` | Client auto-configuration |
 
 The exact MX value is shown in the Microsoft 365 admin centre under **Settings > Domains**. Remove any old MX records after the change and merge SPF entries rather than publishing more than one SPF record.
 
