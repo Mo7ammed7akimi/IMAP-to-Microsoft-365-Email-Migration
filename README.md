@@ -44,6 +44,7 @@ Other limitations of the built-in IMAP migration:
 - The maximum size of a single email is 35 MB.
 - Target mailboxes must exist and be licensed before the batch starts.
 - Passwords (or an admin-level credential) for every source mailbox are required.
+- Offboarding (Microsoft 365 → IMAP) is NOT supported.
 
 Check Microsoft's current documentation, as limits can change.
 
