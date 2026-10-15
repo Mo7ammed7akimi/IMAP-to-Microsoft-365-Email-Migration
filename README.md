@@ -100,8 +100,6 @@ user2@example.com,user2@example.com,SourcePassword2
 - `UserName`: the login name on the source IMAP server.
 - `Password`: the password on the source IMAP server.
 
-> **Security note:** The CSV contains plain-text passwords. Do not commit it to version control. Add it to `.gitignore` and delete it once the migration is complete.
-
 ### 2. Create the migration batch
 
 1. Open the [Exchange admin centre](https://admin.exchange.microsoft.com).
