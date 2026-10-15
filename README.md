@@ -25,7 +25,7 @@ Typical flow:
 1. Prepare the Microsoft 365 tenant, domain and mailboxes.
 2. Create a migration endpoint and batch.
 3. Run an initial sync and, if needed, incremental syncs.
-4. Update DNS (MX, Autodiscover, SPF, DKIM, DMARC).
+4. Update DNS records to point to Microsoft 365 (MX, TXT, CNAME).
 5. Run a final sync, then complete the batch.
 6. Reconfigure clients and decommission the old server.
 
