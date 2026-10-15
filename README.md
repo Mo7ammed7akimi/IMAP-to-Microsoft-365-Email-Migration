@@ -66,6 +66,7 @@ Before starting, confirm that:
 - [ ] A mailbox inventory (addresses and sizes) has been recorded.
 - [ ] The DNS TTL for MX records has been lowered (for example to 300 seconds) at least 48 hours before cutover.
 - [ ] Users have been informed of the migration window.
+- [ ] Backup of source mailboxes (e.g., export to `.pst`) — optional but recommended
 
 ## Migration plan
 
