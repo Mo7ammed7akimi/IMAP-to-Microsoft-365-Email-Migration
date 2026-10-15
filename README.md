@@ -42,7 +42,7 @@ Other limitations of the built-in IMAP migration:
 - Only items in the Inbox and other mail folders are migrated.
 - A maximum of 500,000 items per mailbox is migrated, starting with the newest.
 - The maximum size of a single email is 35 MB.
-- Target mailboxes must exist and be licensed before the batch starts.
+- Target mailboxes must exist and be licensed with a plan that includes Exchange Online (e.g., Microsoft 365 Business Standard, Exchange Online Plan 1) before the migration batch starts.
 - Passwords (or an admin-level credential) for every source mailbox are required.
 - Offboarding (Microsoft 365 → IMAP) is NOT supported.
 
